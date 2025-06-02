@@ -1,0 +1,45 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.log
+*.javadoc
+*.hprof
+*.DS_Store
+*.swp
+*.swo
+*.bak
+*.tmp
+*.out
+*.idea/
+*.vscode/
+target/
+bin/
+build/
+.gradle/
+.mvn/
+.settings/
+.project
+.classpath
+
+# Go
+*.exe
+*.test
+*.out
+*.a
+*.o
+*.so
+*.dll
+*.dylib
+vendor/
+bin/
+pkg/
+coverage.out
+
+# OS generated files
+Thumbs.db
+.DS_Store
+ehthumbs.db
+Icon?
