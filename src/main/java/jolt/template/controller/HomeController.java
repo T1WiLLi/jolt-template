@@ -34,12 +34,12 @@ public class HomeController extends MvcController {
         return ResponseEntity.notFound("Invalid language");
     }
 
-    // @Get("/*")
-    // public ResponseEntity<Void> catch404() {
-    // String path = super.context.rawPath();
-    // Flash.error(LanguageService.getCurrentLanguage().equals("fr") ? "La page " +
-    // path + " n'existe pas"
-    // : "Page " + path + " not found");
-    // return redirect("/");
-    // }
+    @Get("/*")
+    public ResponseEntity<Void> catch404() {
+        String path = super.context.rawPath();
+        Flash.error(LanguageService.getCurrentLanguage().equals("fr") ? "La page " +
+                path + " n'existe pas"
+                : "Page " + path + " not found");
+        return redirect("/");
+    }
 }
