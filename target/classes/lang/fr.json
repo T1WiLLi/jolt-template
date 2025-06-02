@@ -1,0 +1,27 @@
+{
+    "pageTitle": "Template Jolt",
+    "nav": {
+        "home": "Accueil",
+        "about": "À propos",
+        "gettingStarted": "Démarrage",
+        "language": "Langue"
+    },
+    "hero": {
+        "title": "Le framework Jolt",
+        "subtitle": "Une base légère et rapide pour vos applications Java Web",
+        "cta": "Voir sur GitHub"
+    },
+    "about": {
+        "title": "À propos de cette template",
+        "description": "Ce dépôt propose une structure minimale pour démarrer un projet Jolt. Tout est déjà configuré pour :",
+        "point1": "Générer un JAR fonctionnel avec Maven.",
+        "point2": "Démarrer l'application via Docker Compose (avec watch pour le développement).",
+        "point3": "Changer de langue (FR/EN) grâce au système de localisation."
+    },
+    "gettingStarted": {
+        "title": "Getting Started",
+        "subtitle": "Quelques commandes pour cloner, compiler et lancer en local :",
+        "note": "Une fois la commande ci-dessous exécutée, ouvrez votre navigateur sur https://localhost :"
+    },
+    "footer": "© 2025 Jolt. Tous droits réservés."
+}

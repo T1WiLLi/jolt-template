@@ -1,0 +1,27 @@
+{
+    "pageTitle": "Jolt Template",
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "gettingStarted": "Getting Started",
+        "language": "Language"
+    },
+    "hero": {
+        "title": "Jolt Framework",
+        "subtitle": "A lightweight, fast foundation for your Java Web apps",
+        "cta": "View on GitHub"
+    },
+    "about": {
+        "title": "About This Template",
+        "description": "This repository provides a minimal structure to kick-start a Jolt project. Everything is already set up to:",
+        "point1": "Build a functional JAR with Maven.",
+        "point2": "Run the application via Docker Compose (with watch mode for development).",
+        "point3": "Switch language (FR/EN) using the localization system."
+    },
+    "gettingStarted": {
+        "title": "Getting Started",
+        "subtitle": "A few commands to clone, build and run locally:",
+        "note": "Once you run the commands above, open your browser at https://localhost:"
+    },
+    "footer": "© 2025 Jolt. All rights reserved."
+}
