@@ -28,12 +28,10 @@
     font-size: 1.5rem;
     line-height: 1;
     cursor: pointer;
-    transition: transform 0.2s, color 0.2s;
     color: rgba(255,255,255,0.8);
   }
   .flash-close:hover {
     color: white;
-    transform: rotate(90deg);
   }
   @keyframes slideDown {
     0%   { opacity: 0; transform: translateY(-100%); }
