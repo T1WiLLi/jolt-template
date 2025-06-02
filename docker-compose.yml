@@ -2,8 +2,7 @@ version: '3.8'
 services:
   jolt-template:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./docker/java/Dockerfile
     container_name: jolt-app
     env_file:
       - .env
@@ -28,7 +27,9 @@ services:
           target: /workspace/pom.xml
 
   postgres:
-    image: postgres:17
+    build:
+      context: .
+      dockerfile: docker/postgres/Dockerfile
     container_name: jolt-postgres
     restart: unless-stopped
     environment:
@@ -39,8 +40,6 @@ services:
       - "5432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
-      - ./sql/structure.sql:/docker-entrypoint-initdb.d/1_structure.sql
-      - ./sql/mock.sql:/docker-entrypoint-initdb.d/2_mock.sql
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U admin -d jolt_db" ]
       interval: 10s
