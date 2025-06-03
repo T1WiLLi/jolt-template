@@ -11,9 +11,9 @@ public interface IProductService {
 
     public List<Product> getAllByCategory(String category);
 
-    public Product getProductById(int id);
+    public Product getById(int id);
 
-    public Product getProductByName(String name);
+    public Product getByName(String name);
 
     public Product save(Form form);
 

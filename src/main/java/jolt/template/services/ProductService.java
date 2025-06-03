@@ -12,36 +12,35 @@ public class ProductService implements IProductService {
 
     @Override
     public List<Product> getAll() {
-
+        return null;
     }
 
     @Override
     public List<Product> getAllByCategory(String category) {
+        return null;
+    }
 
+    public Product getByName(String name) {
+        return null;
     }
 
     @Override
-    public Product getProductById(int id) {
-
-    }
-
-    @Override
-    public Product getProductByName(String name) {
-
+    public Product getById(int id) {
+        return null;
     }
 
     @Override
     public Product save(Form form) {
-
+        return null;
     }
 
     @Override
     public Product update(Form form) {
-
+        return null;
     }
 
     @Override
     public void delete(int id) {
-
+        // no-op
     }
 }
