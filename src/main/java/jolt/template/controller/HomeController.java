@@ -31,7 +31,9 @@ public class HomeController extends MvcController {
             Flash.success(lang.equals("fr") ? "La langue a été changée en français" : "Language changed to English");
             return redirect("/");
         }
-        return ResponseEntity.notFound("Invalid language");
+        Flash.error(LanguageService.getCurrentLanguage().equals("fr") ? "La langue n'est pas prise en charge"
+                : "Language not supported");
+        return redirect("/");
     }
 
     @Get("/*")
