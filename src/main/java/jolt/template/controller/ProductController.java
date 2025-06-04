@@ -29,12 +29,16 @@ public class ProductController extends ApiController {
     }
 
     @Get("/name")
-    public ResponseEntity<Product> getProductByName(@Query String name) {
-        return okJson(this.productService.getByName(name));
+    public ResponseEntity<?> getProductByName(@Query String name) {
+        return getProductResponse(this.productService.getByName(name));
     }
 
     @Get("{id}")
-    public ResponseEntity<Product> getProductById(@Path int id) {
-        return okJson(this.productService.getById(id));
+    public ResponseEntity<?> getProductById(@Path int id) {
+        return getProductResponse(this.productService.getById(id));
+    }
+
+    private ResponseEntity<?> getProductResponse(Product product) {
+        return product != null ? okJson(product) : notFound("Le produit n'a pas été trouvé");
     }
 }

@@ -29,10 +29,10 @@ public class HomeController extends MvcController {
         if (lang.equals("en") || lang.equals("fr")) {
             LanguageService.changeLanguage(lang);
             Flash.success(lang.equals("fr") ? "La langue a été changée en français" : "Language changed to English");
-            return redirect("/");
+        } else {
+            Flash.error(LanguageService.getCurrentLanguage().equals("fr") ? "La langue n'est pas prise en charge"
+                    : "Language not supported");
         }
-        Flash.error(LanguageService.getCurrentLanguage().equals("fr") ? "La langue n'est pas prise en charge"
-                : "Language not supported");
         return redirect("/");
     }
 

@@ -5,7 +5,7 @@ import jolt.template.entities.Product;
 
 public class ProductBroker extends RestBroker<Integer, Product> {
 
-    protected ProductBroker() {
+    public ProductBroker() {
         super("products", Product.class, int.class);
     }
 }

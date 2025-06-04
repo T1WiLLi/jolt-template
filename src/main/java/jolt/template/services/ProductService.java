@@ -12,7 +12,7 @@ public class ProductService implements IProductService {
 
     @Override
     public List<Product> getAll() {
-        return null;
+        List<Product> products
     }
 
     @Override
@@ -20,6 +20,7 @@ public class ProductService implements IProductService {
         return null;
     }
 
+    @Override
     public Product getByName(String name) {
         return null;
     }
