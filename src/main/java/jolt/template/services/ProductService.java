@@ -7,6 +7,7 @@ import io.github.t1willi.injector.annotation.Bean;
 import jolt.template.entities.Product;
 import jolt.template.interfaces.IProductService;
 import jolt.template.repositories.ProductBroker;
+import jolt.template.validators.ProductValidator;
 
 @Bean
 public class ProductService implements IProductService {
@@ -33,12 +34,24 @@ public class ProductService implements IProductService {
 
     @Override
     public Product save(Form form) {
-        return null;
+        boolean isValid = new ProductValidator().validateCreation(form);
+        Product product = null;
+        if (isValid) {
+            product = form.buildEntity(Product.class, "product_id", "created_at", "updated_at");
+            new ProductBroker().save(product);
+        }
+        return product;
     }
 
     @Override
-    public Product update(Form form) {
-        return null;
+    public Product update(Form form, int id) {
+        boolean isValid = new ProductValidator().validateUpdate(form);
+        Product product = new ProductBroker().findById(id).orElse(null);
+        if (isValid && product != null) {
+            product = form.updateEntity(product, "product_id", "created_at", "updated_at");
+            new ProductBroker().save(product);
+        }
+        return product;
     }
 
     @Override

@@ -6,8 +6,12 @@ import io.github.t1willi.annotations.Controller;
 import io.github.t1willi.annotations.Delete;
 import io.github.t1willi.annotations.Get;
 import io.github.t1willi.annotations.Path;
+import io.github.t1willi.annotations.Post;
+import io.github.t1willi.annotations.Put;
 import io.github.t1willi.annotations.Query;
+import io.github.t1willi.annotations.ToForm;
 import io.github.t1willi.core.ApiController;
+import io.github.t1willi.form.Form;
 import io.github.t1willi.http.HttpStatus;
 import io.github.t1willi.http.ResponseEntity;
 import io.github.t1willi.injector.annotation.Autowire;
@@ -38,6 +42,20 @@ public class ProductController extends ApiController {
     @Get("{id}")
     public ResponseEntity<?> getProductById(@Path int id) {
         return getProductResponse(this.productService.getById(id));
+    }
+
+    @Post
+    public ResponseEntity<?> createProduct(@ToForm Form form) {
+        Product product = this.productService.save(form);
+        return product != null ? okJson(product).status(HttpStatus.CREATED)
+                : ResponseEntity.of(HttpStatus.NOT_FOUND, form.errors()).header("Content-Type", "application/json");
+    }
+
+    @Put("{product_id}")
+    public ResponseEntity<?> updateProduct(@ToForm Form form, @Path("product_id") int id) {
+        Product product = this.productService.update(form, id);
+        return product != null ? okJson(product).status(HttpStatus.CREATED)
+                : ResponseEntity.of(HttpStatus.NOT_FOUND, form.errors()).header("Content-Type", "application/json");
     }
 
     @Delete("{id}")
