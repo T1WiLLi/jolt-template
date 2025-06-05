@@ -19,5 +19,5 @@ public interface IProductService {
 
     public Product update(Form form);
 
-    public void delete(int id);
+    public boolean delete(int id);
 }
