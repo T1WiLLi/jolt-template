@@ -50,6 +50,8 @@ public class ProductService implements IProductService {
         if (isValid && product != null) {
             product = form.updateEntity(product, "product_id", "created_at", "updated_at");
             new ProductBroker().save(product);
+        } else {
+            form.addError("error", "Produit non trouvé");
         }
         return product;
     }

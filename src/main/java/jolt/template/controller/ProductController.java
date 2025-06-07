@@ -48,14 +48,14 @@ public class ProductController extends ApiController {
     public ResponseEntity<?> createProduct(@ToForm Form form) {
         Product product = this.productService.save(form);
         return product != null ? okJson(product).status(HttpStatus.CREATED)
-                : ResponseEntity.of(HttpStatus.NOT_FOUND, form.errors()).header("Content-Type", "application/json");
+                : notFound(form.errors());
     }
 
     @Put("{product_id}")
     public ResponseEntity<?> updateProduct(@ToForm Form form, @Path("product_id") int id) {
         Product product = this.productService.update(form, id);
         return product != null ? okJson(product).status(HttpStatus.CREATED)
-                : ResponseEntity.of(HttpStatus.NOT_FOUND, form.errors()).header("Content-Type", "application/json");
+                : notFound(form.errors());
     }
 
     @Delete("{id}")
@@ -67,7 +67,6 @@ public class ProductController extends ApiController {
     private ResponseEntity<?> getProductResponse(Product product) {
         return product != null
                 ? okJson(product)
-                : ResponseEntity.of(HttpStatus.NOT_FOUND, "Le produit n'a pas été trouvé").header("Content-Type",
-                        "text/plain");
+                : notFound("Le produit n'a pas été trouvé");
     }
 }
