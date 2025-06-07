@@ -39,7 +39,7 @@ public class SecurityConfig extends SecurityConfiguration {
                                 .and()
                                 .httpsOnly(true);
 
-                withCSRF().enable();
+                withCSRF().enable().addIgnoreUrlPatterns("/products");
                 withNonce().enable();
                 withMaxRequest(60);
         }

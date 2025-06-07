@@ -1,5 +1,5 @@
 CREATE TABLE products (
-    product_id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     quantity INT NOT NULL DEFAULT 0 CHECK (quantity >= 0),

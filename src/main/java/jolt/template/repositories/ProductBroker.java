@@ -9,7 +9,7 @@ import jolt.template.entities.Product;
 public class ProductBroker extends RestBroker<Integer, Product> {
 
     public ProductBroker() {
-        super("products", Product.class, int.class, "product_id");
+        super("products", Product.class, int.class);
     }
 
     public Product findByName(String name) {
