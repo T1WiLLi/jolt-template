@@ -13,7 +13,7 @@
     <maven.compiler.target>21</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <main.class>jolt.template.Main</main.class>
-    <jolt.version>2.9.4.1</jolt.version>
+    <jolt.version>2.9.5</jolt.version>
   </properties>
 
   <dependencies>
