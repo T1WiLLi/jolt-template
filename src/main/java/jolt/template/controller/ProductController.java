@@ -61,7 +61,7 @@ public class ProductController extends ApiController {
     @Delete("{id}")
     public ResponseEntity<String> deleteProduct(@Path int id) {
         boolean result = this.productService.delete(id);
-        return result ? okJson("Product deleted") : notFound("Product not found");
+        return result ? okJson("Produit supprimer") : notFound("Le produit n'a pas été supprimé");
     }
 
     private ResponseEntity<?> getProductResponse(Product product) {

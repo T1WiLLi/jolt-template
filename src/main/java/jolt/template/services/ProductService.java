@@ -37,7 +37,7 @@ public class ProductService implements IProductService {
         boolean isValid = new ProductValidator().validateCreation(form);
         Product product = null;
         if (isValid) {
-            product = form.buildEntity(Product.class, "product_id", "created_at", "updated_at");
+            product = form.buildEntity(Product.class, "id", "created_at", "updated_at");
             new ProductBroker().save(product);
         }
         return product;
@@ -48,7 +48,7 @@ public class ProductService implements IProductService {
         boolean isValid = new ProductValidator().validateUpdate(form);
         Product product = new ProductBroker().findById(id).orElse(null);
         if (isValid && product != null) {
-            product = form.updateEntity(product, "product_id", "created_at", "updated_at");
+            product = form.updateEntity(product, "id", "created_at", "updated_at");
             new ProductBroker().save(product);
         } else {
             form.addError("error", "Produit non trouvé");

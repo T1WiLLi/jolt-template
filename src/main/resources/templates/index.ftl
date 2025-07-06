@@ -108,7 +108,7 @@
                 <pre class="bg-dark text-white p-3 rounded">
 <code>
 # Cloner le dépôt d'exemple
-git clone https://github.com/T1WiLLi/JoltExamples.git
+git clone https://github.com/T1WiLLi/jolt-template
 cd JoltExamples/jolt-template
 
 # Construire et lancer avec Docker Compose
